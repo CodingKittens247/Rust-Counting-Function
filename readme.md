@@ -1,2 +1,2 @@
-This is a challenge by the Rust Lang book, in the end of ch8.3
-The code is quite simple and self explanatory 
+This is a part of a challenge by the Rust Lang book, in the end of ch8.3
+The code is quite simple and self explanatory, using this as merely a bridge for the full exercise, since it is "Given a list of integers, use a vector and return the median (when sorted, the value in the middle position) and mode (the value that occurs most often; a hash map will be helpful here) of the list."

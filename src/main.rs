@@ -1,5 +1,4 @@
 use std::collections::HashMap;
-
 fn main() {
     let nums: [i32; 23] = [1,2,3,4,5,6,1,2,3,1,2,1,2,1,7,9,6,6,6,6,102,100,9001];
     //first we initialize what will be counted
