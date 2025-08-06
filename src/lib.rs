@@ -1,2 +1,1 @@
-mod countintfn;
-pub use crate::countintfn::countint;
+pub mod intfun;
