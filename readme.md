@@ -3,7 +3,7 @@ The code is quite simple and self explanatory, using this as merely a bridge for
 
 In short,
 
-- [ ] make an API, that when given a vector that returns the median and mode
+- [X] make an API, that when given a vector that returns the median and mode
 - [ ] Pig Latin string concotenation
 - [ ] Make a tgui to edit lists of names and add suffixes, that can be indexed, alphabetically.
 
