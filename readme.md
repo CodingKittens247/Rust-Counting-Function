@@ -3,8 +3,10 @@ The code is quite simple and self explanatory, using this as merely a bridge for
 
 In short,
 
-- [X] make an API, that when given a vector that returns the median and mode
+- [X] make an API, that when given a vector that returns the median and mode[^1]
 - [ ] Pig Latin string concotenation
 - [ ] Make a tgui to edit lists of names and add suffixes, that can be indexed, alphabetically.
 
 Given these exercises, I will attempt to use the methods talked about in previous chapters, such as declaring sub modules, and APIs to solve this problem.
+
+[^1]: Still needs work to be considered finished, as it doesn't accept any user input, and has very lean/bad error handling. not very idiomatic
