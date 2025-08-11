@@ -1,4 +1,4 @@
-//use std::collections::{hash_map::Keys, HashMap};
+//this is all the functions required for the first part of the challange, ergo c1
     pub fn medianint(nums: &[i32]) -> f64 {
     //my modus operandi here is gonna be, take the vectored list, parse it (order it) and met len it, and return the middle one if its a prime
     //that was my first approach, but i refactored it into taking a slice of the entire vector, so i could easierly modify it without much hassle.
