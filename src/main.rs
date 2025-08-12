@@ -1,9 +1,7 @@
 use chall83::c1::*;
 use chall83::c2::*;
-enum CONSONANTS  {B,C,D,F,G,H,J,K,L,M,N,P,Q,R,S,T,V,W,X,Z,}
-//const CONSONANTS: char =  {B;C;D;F;G;H;J;K;L;M;N;P;Q;R;S;T;V;W;X;Z};
+//enum CONSONANTS  {B,C,D,F,G,H,J,K,L,M,N,P,Q,R,S,T,V,W,X,Z,}
 // enum Charac {
-    
 // }
 fn c1() {
     let nums: Vec<i32> = vec![20,21,301,1024,681,20];
@@ -15,7 +13,7 @@ fn c2(){
     let argoz = Sentence {
         content: arg,
     };
-    println!("{}",piglatte(&argoz.content));
+    println!("{:?}",argoz.piglatino()); //:? because no pretty print 
 }
 fn main() {
     c1();
@@ -23,33 +21,34 @@ fn main() {
 pub struct Sentence {
  content: String,
 }
-
+//i want a function that isolates the char to remove/modify, for consonants, another for  vowels, etc 
 impl Sentence {
-    fn pigs(&self) -> &str {
-        if cons(&self) == true {
-            return 
+    fn piglatino(&self) -> Option<&str> {
+        match &self.consonant() {
+            
         }
         }
-    
-    fn cons(&self) -> (bool) {
-        let first: bool  = match &self.content.starts_with(CONSONANTS){
-            Some(first) => Some((first)),
-            None => None,
-        };
+    fn consonant(&self) -> Option<char> { 
+        const CONSONANTS: &[char] =
+         &['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M',
+            'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z'];
+        self.content.chars().next()
+        .filter(|c| CONSONANTS.contains(c))
+        //here i want to return the char that i want to replace, otherwise return None
     }
-
-    fn vow(&self) -> (bool, char) {
-        let first: bool  = match &self.content.starts_with(CONSONANTS){
-            Some(first) => Some((first)),
-            None => None,
-        };
-    fn revpop(&self) -> &str {
-        let mut one: Vec<u8> = &self.content.split_whitespace().rev().collect();
+    fn vowel(&self) -> Option<char> {
+        const VOWELS: &[char] =
+         &['A', 'E', 'I', 'O', 'U'];
+        self.content.chars().next()
+        .filter(|c| VOWELS.contains(c))
+    }
+    fn conspop(&self, char) -> &str {
+        let mut one: Vec<_> = self.content.split_whitespace().rev().collect();
         one.pop();
         one.iter().rev();
         one.push("fay");
         stringify!(one)
-    };
     }
+
     }
 
