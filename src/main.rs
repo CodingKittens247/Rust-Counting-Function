@@ -13,7 +13,7 @@ fn c2(){
     let argoz = Sentence {
         content: arg,
     };
-    println!("{:?}",argoz.piglatino()); //:? because no pretty print 
+    println!("{:?}",argoz.piglatino()); //:? because no pretty print as of yet
 }
 fn main() {
     c1();
@@ -25,6 +25,7 @@ pub struct Sentence {
 impl Sentence {
     fn piglatino(&self) -> Option<&str> {
         {
+
         }}
         
     fn consonant(&self) -> Option<char> { //why do i return option? because i like it, i will not do the check if it ishere, because i am lazy and dont plan ahead, and the boiletplate part is already done, i should really learn to plan my structures better!
@@ -35,12 +36,6 @@ impl Sentence {
         .filter(|c| CONSONANTS.contains(c))
         //here i want to return the char that i want to replace, otherwise return None -- if we are using slices of strings, why return char? because its easier for me to find it if i convert it to char lol
     }
-    fn vowel(&self) -> Option<char> { // same function as above but with diff criteria because i copy pasted, i should refsctor this shyte
-        const VOWELS: &[char] =
-         &['A', 'E', 'I', 'O', 'U'];
-        self.content.chars().next()
-        .filter(|c| VOWELS.contains(c))
-    }
     fn conspop(&self) -> &str {
         let mut one: Vec<_> = self.content.split_whitespace().rev().collect();
         one.pop();
@@ -49,6 +44,12 @@ impl Sentence {
         stringify!(one)
     }//holy batman what the hell happened here? u ask, well you see, strings are just vecs of u8, so i converted it to its most primal form, then i reversed it,removed the most element to the right (last), then i pushed the char (UNWRAPPED FOR OPTION, TO STRING FOR UTF 8 AND THEN TO STR BECAUSE SLICES ARE BEST! for this, then i stringify the spaghetti and return it in one)
 
+    fn vowel(&self) -> Option<char> { // same function as above but with diff criteria because i copy pasted, i should refsctor this shyte
+        const VOWELS: &[char] =
+         &['A', 'E', 'I', 'O', 'U'];
+        self.content.chars().next()
+        .filter(|c| VOWELS.contains(c))
+    }
     }
 
 
